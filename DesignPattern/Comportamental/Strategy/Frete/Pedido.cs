@@ -1,4 +1,4 @@
-﻿namespace Strategy
+﻿namespace DesignPattern.Comportamental.Strategy.Frete
 {
     public abstract class Pedido
     {
