@@ -23,7 +23,7 @@ void Frete()
     Pedido pedido = new PedidoEletronicos();
     pedido.Valor = 100;
 
-    //Frete Comun
+    //Frete Comum
     IFrete freteComum = new FreteComum();
     pedido.Frete(freteComum);
     Console.WriteLine($"Frete Comum: R$ {pedido.CalcularFrete()}");
