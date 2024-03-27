@@ -1,15 +1,21 @@
-﻿using Strategy;
-using Strategy.Rota;
-using Strategy.Sort;
+﻿using DesignPattern.Comportamental.Strategy.Frete;
+using DesignPattern.Comportamental.Strategy.Rota;
+using DesignPattern.Comportamental.Strategy.Sort;
 
-//Exemplo 1
-Frete();
+Strategy();
 
-//Exemplo 2
-Rota();
+#region Strategy
+void Strategy()
+{
+    //Exemplo 01
+    Frete();
 
-//Exemplo 3
-OrderList();
+    //Exemplo 02
+    Rota();
+
+    //Exemplo 03
+    OrderList();
+}
 
 void Frete()
 {
@@ -25,6 +31,8 @@ void Frete()
     IFrete freteExpresso = new FreteExpresso();
     pedido.Frete(freteExpresso);
     Console.WriteLine($"Frete Expresso: R$ {pedido.CalcularFrete()}");
+
+    Console.WriteLine(Environment.NewLine);
 }
 
 void Rota()
@@ -36,7 +44,7 @@ void Rota()
 
     IRota rotaCarro = new RotaCarro();
     carro.Rota(rotaCarro);
-    Console.WriteLine($"Calculando rota de carro {carro.ContruirRota() }");
+    Console.WriteLine($"Calculando rota de carro {carro.ContruirRota()}");
 
     //Navegacao de Carro
     NavegacaoOnibus onibus = new NavegacaoOnibus();
@@ -45,29 +53,28 @@ void Rota()
 
     IRota rotaOnibus = new RotaOnibus();
     onibus.Rota(rotaOnibus);
-    Console.WriteLine($"Calculando rota de onibus {onibus.ContruirRota() }");
+    Console.WriteLine($"Calculando rota de onibus {onibus.ContruirRota()}");
+
+    Console.WriteLine(Environment.NewLine);
 }
 
 void OrderList()
 {
     var list = new List<string>()
     {
-     "Rafael",
-     "Augusto",
-     "Miranda"
+     "Vaca",
+     "Cavalo",
+     "Gato"
     };
 
     var sort = new SortStrategy(new Descending());
     list = sort.Sort(list);
     list.ForEach(x => Console.WriteLine(x));
 
-    Console.WriteLine(Environment.NewLine);
-
     sort = new SortStrategy(new Ascending());
     list = sort.Sort(list);
     list.ForEach(x => Console.WriteLine(x));
+
+    Console.WriteLine(Environment.NewLine);
 }
-
-
-
-
+#endregion
