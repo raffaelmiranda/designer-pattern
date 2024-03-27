@@ -19,13 +19,18 @@ void Strategy()
 
 void Frete()
 {
-    PedidoEletronicos pedido = new PedidoEletronicos();
+    //Pedido Eletronicos
+    Pedido pedido = new PedidoEletronicos();
     pedido.Valor = 100;
 
     //Frete Comun
     IFrete freteComum = new FreteComum();
     pedido.Frete(freteComum);
     Console.WriteLine($"Frete Comum: R$ {pedido.CalcularFrete()}");
+
+    //Pedido Moveis
+    pedido = new PedidoMoveis();
+    pedido.Valor = 500;
 
     //Frete Expresso
     IFrete freteExpresso = new FreteExpresso();
