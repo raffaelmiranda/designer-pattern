@@ -1,12 +1,12 @@
-﻿using DesignPattern.Comportamental.TemplateMethod.GatewayPagamento;
-using DesignPattern.Comportamental.TemplateMethod.Generico;
-using DesignPattern.Comportamental.TemplateMethod.Generico2;
+﻿using DesignPattern.Comportamental.TemplateMethod.Case1;
+using DesignPattern.Comportamental.TemplateMethod.Case2;
+using DesignPattern.Comportamental.TemplateMethod.Case3;
 
 namespace DesignPattern.Comportamental.TemplateMethod
 {
     public static class RootTemplateMethod
     {
-        public static void Pagamento()
+        public static void Case1()
         {
             float valor = 1000f;
             Gateway gateway = new Gateway();
@@ -27,7 +27,7 @@ namespace DesignPattern.Comportamental.TemplateMethod
             pagamentoDinheiro.RealizaCobranca();
         }
 
-        public static void Generico()
+        public static void Case2()
         {
             Algorithm m = new Algorithm();
 
@@ -35,7 +35,7 @@ namespace DesignPattern.Comportamental.TemplateMethod
             m.TemplateMethod(new ConcreteClassB());
         }
 
-        public static void Generico2()
+        public static void Case3()
         {
             Client.ClientCode(new ConcreteClass1());
 

@@ -1,12 +1,12 @@
-﻿using DesignPattern.Comportamental.Strategy.Frete;
-using DesignPattern.Comportamental.Strategy.Rota;
-using DesignPattern.Comportamental.Strategy.Sort;
+﻿using DesignPattern.Comportamental.Strategy.Case1;
+using DesignPattern.Comportamental.Strategy.Case2;
+using DesignPattern.Comportamental.Strategy.Case3;
 
 namespace DesignPattern.Comportamental.Strategy
 {
     public static class RootStrategy
     {
-        public static void Frete()
+        public static void Case1()
         {
             //Pedido Eletronicos
             Pedido pedido = new PedidoEletronicos();
@@ -29,7 +29,7 @@ namespace DesignPattern.Comportamental.Strategy
             Console.WriteLine(Environment.NewLine);
         }
 
-        public static void Rota()
+        public static void Case2()
         {
             //Navegacao de Carro
             NavegacaoCarro carro = new NavegacaoCarro();
@@ -52,7 +52,7 @@ namespace DesignPattern.Comportamental.Strategy
             Console.WriteLine(Environment.NewLine);
         }
 
-        public static void OrderList()
+        public static void Case3()
         {
             var list = new List<string>()
             {

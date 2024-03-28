@@ -22,5 +22,5 @@
 	- Memento
 	- Observer
 	- State
-	- Strategy: O padrão de projeto Strategy cria uma família de algoritmos que podem ser intercambiados, ou seja, utilizar um algoritmo no lugar de outro, conforme a necessidade de quem os utiliza.
+	- Strategy
 	- Template Method

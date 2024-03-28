@@ -7,25 +7,25 @@ TemplateMethod();
 void Strategy()
 {
     //Exemplo 01
-    RootStrategy.Frete();
+    RootStrategy.Case1();
 
     //Exemplo 02
-    RootStrategy.Rota();
+    RootStrategy.Case2();
 
     //Exemplo 03
-    RootStrategy.OrderList();
+    RootStrategy.Case3();
 }
 
 void TemplateMethod()
 {
     //Exemplo 01
-    RootTemplateMethod.Pagamento();
+    RootTemplateMethod.Case1();
 
     //Exemplo 02
-    RootTemplateMethod.Generico();
+    RootTemplateMethod.Case2();
 
     //Exemplo 03
-    RootTemplateMethod.Generico2();
+    RootTemplateMethod.Case3();
 }
 
 
