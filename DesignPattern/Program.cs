@@ -1,8 +1,10 @@
-﻿using DesignPattern.Comportamental.Strategy;
+﻿using DesignPattern.Comportamental.Observer;
+using DesignPattern.Comportamental.Strategy;
 using DesignPattern.Comportamental.TemplateMethod;
 
 //Strategy();
-TemplateMethod();
+//TemplateMethod();
+Observer();
 
 void Strategy()
 {
@@ -26,6 +28,11 @@ void TemplateMethod()
 
     //Exemplo 03
     RootTemplateMethod.Case3();
+}
+
+void Observer()
+{
+    RootObserver.Case1();
 }
 
 
