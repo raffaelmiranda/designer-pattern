@@ -1,85 +1,31 @@
-﻿using DesignPattern.Comportamental.Strategy.Frete;
-using DesignPattern.Comportamental.Strategy.Rota;
-using DesignPattern.Comportamental.Strategy.Sort;
+﻿using DesignPattern.Comportamental.Strategy;
+using DesignPattern.Comportamental.TemplateMethod;
 
-Strategy();
+//Strategy();
+TemplateMethod();
 
-#region Strategy
 void Strategy()
 {
     //Exemplo 01
-    Frete();
+    RootStrategy.Frete();
 
     //Exemplo 02
-    Rota();
+    RootStrategy.Rota();
 
     //Exemplo 03
-    OrderList();
+    RootStrategy.OrderList();
 }
 
-void Frete()
+void TemplateMethod()
 {
-    //Pedido Eletronicos
-    Pedido pedido = new PedidoEletronicos();
-    pedido.Valor = 100;
+    //Exemplo 01
+    RootTemplateMethod.Pagamento();
 
-    //Frete Comum
-    IFrete freteComum = new FreteComum();
-    pedido.Frete(freteComum);
-    Console.WriteLine($"Frete Comum: R$ {pedido.CalcularFrete()}");
+    //Exemplo 02
+    RootTemplateMethod.Generico();
 
-    //Pedido Moveis
-    pedido = new PedidoMoveis();
-    pedido.Valor = 500;
-
-    //Frete Expresso
-    IFrete freteExpresso = new FreteExpresso();
-    pedido.Frete(freteExpresso);
-    Console.WriteLine($"Frete Expresso: R$ {pedido.CalcularFrete()}");
-
-    Console.WriteLine(Environment.NewLine);
+    //Exemplo 03
+    RootTemplateMethod.Generico2();
 }
 
-void Rota()
-{
-    //Navegacao de Carro
-    NavegacaoCarro carro = new NavegacaoCarro();
-    carro.Partida = "A";
-    carro.Destino = "B";
 
-    IRota rotaCarro = new RotaCarro();
-    carro.Rota(rotaCarro);
-    Console.WriteLine($"Calculando rota de carro {carro.ContruirRota()}");
-
-    //Navegacao de Carro
-    NavegacaoOnibus onibus = new NavegacaoOnibus();
-    onibus.Partida = "A";
-    onibus.Destino = "B";
-
-    IRota rotaOnibus = new RotaOnibus();
-    onibus.Rota(rotaOnibus);
-    Console.WriteLine($"Calculando rota de onibus {onibus.ContruirRota()}");
-
-    Console.WriteLine(Environment.NewLine);
-}
-
-void OrderList()
-{
-    var list = new List<string>()
-    {
-     "Vaca",
-     "Cavalo",
-     "Gato"
-    };
-
-    var sort = new SortStrategy(new Descending());
-    list = sort.Sort(list);
-    list.ForEach(x => Console.WriteLine(x));
-
-    sort = new SortStrategy(new Ascending());
-    list = sort.Sort(list);
-    list.ForEach(x => Console.WriteLine(x));
-
-    Console.WriteLine(Environment.NewLine);
-}
-#endregion
