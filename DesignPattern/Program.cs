@@ -1,11 +1,14 @@
 ﻿using DesignPattern.Comportamental.Observer;
+using DesignPattern.Comportamental.State;
 using DesignPattern.Comportamental.Strategy;
 using DesignPattern.Comportamental.TemplateMethod;
 
 //Strategy();
 //TemplateMethod();
-Observer();
+//Observer();
+State();
 
+#region Comportamental
 void Strategy()
 {
     //Exemplo 01
@@ -32,7 +35,14 @@ void TemplateMethod()
 
 void Observer()
 {
+    //Exemplo 01
     RootObserver.Case1();
 }
 
+void State()
+{
+    //Exemplo 01
+    RootState.Case1();
+}
+#endregion
 
