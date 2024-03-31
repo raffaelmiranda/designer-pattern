@@ -20,7 +20,7 @@
 	- Mediator
 	- Visitor
 	- Memento
-	- Observer
-	- State
-	- Strategy
-	- Template Method
+	- Observer OK
+	- State OK
+	- Strategy OK
+	- Template Method OK
